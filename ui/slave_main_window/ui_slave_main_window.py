@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\slave_main_window\slave_main_window.ui'
+# Form implementation generated from reading ui file 'ui/slave_main_window/slave_main_window.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -25,7 +25,7 @@ class Ui_SlaveMainWindow(object):
         self.verticalLayout_2.addLayout(self.verticalLayout)
         SlaveMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=SlaveMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(parent=self.menubar)
         self.menuFile.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
@@ -65,21 +65,18 @@ class Ui_SlaveMainWindow(object):
         self.toolBar.setObjectName("toolBar")
         SlaveMainWindow.addToolBar(QtCore.Qt.ToolBarArea.TopToolBarArea, self.toolBar)
         self.actionHome = QtGui.QAction(parent=SlaveMainWindow)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\ui\\slave_main_window\\../../resources/icons/home.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon = QtGui.QIcon.fromTheme("go-home")
         self.actionHome.setIcon(icon)
         self.actionHome.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.actionHome.setObjectName("actionHome")
         self.actionAddBlock = QtGui.QAction(parent=SlaveMainWindow)
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(".\\ui\\slave_main_window\\../../resources/icons/table-plus.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionAddBlock.setIcon(icon1)
+        icon = QtGui.QIcon.fromTheme("list-add")
+        self.actionAddBlock.setIcon(icon)
         self.actionAddBlock.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.actionAddBlock.setObjectName("actionAddBlock")
         self.actionDeleteBlocks = QtGui.QAction(parent=SlaveMainWindow)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(".\\ui\\slave_main_window\\../../resources/icons/file-x.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.actionDeleteBlocks.setIcon(icon2)
+        icon = QtGui.QIcon.fromTheme("edit-clear")
+        self.actionDeleteBlocks.setIcon(icon)
         self.actionDeleteBlocks.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.actionDeleteBlocks.setObjectName("actionDeleteBlocks")
         self.menubar.addAction(self.menuFile.menuAction())
@@ -116,13 +113,3 @@ class Ui_SlaveMainWindow(object):
         self.actionHome.setText(_translate("SlaveMainWindow", "Go to home"))
         self.actionAddBlock.setText(_translate("SlaveMainWindow", "Add new block"))
         self.actionDeleteBlocks.setText(_translate("SlaveMainWindow", "Delete all blocks"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    SlaveMainWindow = QtWidgets.QMainWindow()
-    ui = Ui_SlaveMainWindow()
-    ui.setupUi(SlaveMainWindow)
-    SlaveMainWindow.show()
-    sys.exit(app.exec())

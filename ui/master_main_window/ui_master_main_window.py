@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\master_main_window\master_main_window.ui'
+# Form implementation generated from reading ui file 'ui/master_main_window/master_main_window.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -31,8 +31,7 @@ class Ui_MasterMainWindow(object):
         self.toolBar.setObjectName("toolBar")
         MasterMainWindow.addToolBar(QtCore.Qt.ToolBarArea.TopToolBarArea, self.toolBar)
         self.actionHome = QtGui.QAction(parent=MasterMainWindow)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\ui\\master_main_window\\../../resources/icons/home.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon = QtGui.QIcon.fromTheme("go-home")
         self.actionHome.setIcon(icon)
         self.actionHome.setMenuRole(QtGui.QAction.MenuRole.NoRole)
         self.actionHome.setObjectName("actionHome")
@@ -47,13 +46,3 @@ class Ui_MasterMainWindow(object):
         self.label.setText(_translate("MasterMainWindow", "COMIC SOON..."))
         self.toolBar.setWindowTitle(_translate("MasterMainWindow", "toolBar"))
         self.actionHome.setText(_translate("MasterMainWindow", "Home"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MasterMainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MasterMainWindow()
-    ui.setupUi(MasterMainWindow)
-    MasterMainWindow.show()
-    sys.exit(app.exec())
