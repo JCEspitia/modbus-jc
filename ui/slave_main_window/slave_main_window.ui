@@ -64,6 +64,7 @@
     <property name="title">
      <string>Setup</string>
     </property>
+    <addaction name="actionSlaveConfig"/>
    </widget>
    <widget class="QMenu" name="menuFunctions">
     <property name="cursor">
@@ -173,6 +174,14 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionSlaveConfig">
+   <property name="icon">
+    <iconset theme="document-properties"/>
+   </property>
+   <property name="text">
+    <string>Slave configuration...</string>
    </property>
   </action>
  </widget>
