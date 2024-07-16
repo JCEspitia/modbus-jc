@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\documentation\documentation.ui'
+# Form implementation generated from reading ui file 'ui/documentation/documentation.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -40,13 +40,3 @@ class Ui_Documentation(object):
         Documentation.setWindowTitle(_translate("Documentation", "Modbus JC - Documentation"))
         self.toolBar.setWindowTitle(_translate("Documentation", "toolBar"))
         self.actionHome.setText(_translate("Documentation", "Home"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Documentation = QtWidgets.QMainWindow()
-    ui = Ui_Documentation()
-    ui.setupUi(Documentation)
-    Documentation.show()
-    sys.exit(app.exec())

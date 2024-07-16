@@ -49,7 +49,7 @@
   </widget>
   <action name="actionHome">
    <property name="icon">
-    <iconset>
+    <iconset theme="go-home">
      <normaloff>../../resources/icons/home.png</normaloff>../../resources/icons/home.png</iconset>
    </property>
    <property name="text">
