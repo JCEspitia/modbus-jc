@@ -9,9 +9,9 @@ class WindowManager:
     def __init__(self):
         self.app = QtWidgets.QApplication([])
         self.home = Home(self)
-        self.slave_main_window = SlaveMainWindow()
-        self.master_main_window = MasterMainWindow()
-        self.documentation = Documentation()
+        self.slave_main_window = SlaveMainWindow(self)
+        self.master_main_window = MasterMainWindow(self)
+        self.documentation = Documentation(self)
 
     def show_home(self):
         self.home.show()

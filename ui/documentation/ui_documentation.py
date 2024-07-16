@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui/documentation/documentation.ui'
+# Form implementation generated from reading ui file '.\ui\documentation\documentation.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -22,6 +22,15 @@ class Ui_Documentation(object):
         self.docViewer.setObjectName("docViewer")
         self.verticalLayout.addWidget(self.docViewer)
         Documentation.setCentralWidget(self.centralwidget)
+        self.toolBar = QtWidgets.QToolBar(parent=Documentation)
+        self.toolBar.setObjectName("toolBar")
+        Documentation.addToolBar(QtCore.Qt.ToolBarArea.TopToolBarArea, self.toolBar)
+        self.actionHome = QtGui.QAction(parent=Documentation)
+        icon = QtGui.QIcon.fromTheme("go-home")
+        self.actionHome.setIcon(icon)
+        self.actionHome.setMenuRole(QtGui.QAction.MenuRole.NoRole)
+        self.actionHome.setObjectName("actionHome")
+        self.toolBar.addAction(self.actionHome)
 
         self.retranslateUi(Documentation)
         QtCore.QMetaObject.connectSlotsByName(Documentation)
@@ -29,3 +38,15 @@ class Ui_Documentation(object):
     def retranslateUi(self, Documentation):
         _translate = QtCore.QCoreApplication.translate
         Documentation.setWindowTitle(_translate("Documentation", "Modbus JC - Documentation"))
+        self.toolBar.setWindowTitle(_translate("Documentation", "toolBar"))
+        self.actionHome.setText(_translate("Documentation", "Home"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Documentation = QtWidgets.QMainWindow()
+    ui = Ui_Documentation()
+    ui.setupUi(Documentation)
+    Documentation.show()
+    sys.exit(app.exec())

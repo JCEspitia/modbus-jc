@@ -1,7 +1,8 @@
 from PyQt6.QtCore import pyqtSignal, Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QMdiSubWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, \
-    QMessageBox, QInputDialog
+    QMessageBox, QInputDialog, QLabel, QLineEdit
 
+from scripts.registers_widget.registers_widget import RegistersWidget
 from ui.slave_main_window.ui_slave_main_window import Ui_SlaveMainWindow
 
 
@@ -20,7 +21,10 @@ class CustomBlock(QMdiSubWindow):
     def mouseDoubleClickEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
             self.title_double_clicked.emit()
-        super().mouseDoubleClickEvent(event)
+            # Evitar que se maximice
+            event.ignore()
+        else:
+            super().mouseDoubleClickEvent(event)
 
     def closeEvent(self, event):
         super().closeEvent(event)
@@ -28,11 +32,12 @@ class CustomBlock(QMdiSubWindow):
 
 
 class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
-    def __init__(self):
+    def __init__(self, window_manager=None):
         """
         Slave main window constructor.
         """
         super().__init__()
+        self.window_manager = window_manager
         self.block_counter = 0
         self.limit_blocks = 5
         self.blocks = []
@@ -43,9 +48,14 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
         """
         Initialize the main window.
         """
-        self.addModbusBlockBtn.clicked.connect(self.add_block)
-        self.deleteBlocksBtn.clicked.connect(self.delete_all_blocks)
+        self.actionHome.triggered.connect(self.open_home)
+        self.actionAddBlock.triggered.connect(self.add_block)
+        self.actionDeleteBlocks.triggered.connect(self.delete_all_blocks)
         self.add_block()
+
+    def open_home(self):
+        self.window_manager.show_home()
+        self.close()
 
     def add_block(self):
         """
@@ -53,18 +63,18 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
         """
         if self.block_counter < self.limit_blocks:
             self.block_counter += 1
+            content_widget = RegistersWidget()
             sub_window = CustomBlock()
-            text_edit = QTextEdit()
-            sub_window.setWidget(text_edit)
-            sub_window.setWindowTitle(f"New block")
+            sub_window.setWidget(content_widget)
+            sub_window.setWindowTitle("New block")
 
-            # Connect double-click signal to edit title
             sub_window.title_double_clicked.connect(lambda: self.edit_title(sub_window))
 
             sub_window.closed.connect(lambda: self.block_closed_event(sub_window))
 
             self.blocks.append(sub_window)
             self.blocksContainer.addSubWindow(sub_window)
+            sub_window.resize(300, 400)
             sub_window.show()
         else:
             QMessageBox.warning(self,
@@ -96,9 +106,10 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
 
         :param sub_window: QMdiSubWindow to edit the title.
         """
-        new_title, ok = QInputDialog.getText(self, "Edit Title", "Enter new title:", text=sub_window.windowTitle())
+        new_title, ok = QInputDialog.getText(self,
+                                             "Edit Title",
+                                             "Enter new title of block:",
+                                             text=sub_window.windowTitle())
 
         if ok and new_title:
             sub_window.setWindowTitle(new_title)
-
-
