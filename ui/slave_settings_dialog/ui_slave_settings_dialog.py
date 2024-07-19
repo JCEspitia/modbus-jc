@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui/slave_configuration_dialog/slave_configuration_dialog.ui'
+# Form implementation generated from reading ui file 'ui/slave_settings_dialog/slave_settings_dialog.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -9,11 +9,11 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_SlaveConfigDialog(object):
-    def setupUi(self, SlaveConfigDialog):
-        SlaveConfigDialog.setObjectName("SlaveConfigDialog")
-        SlaveConfigDialog.resize(537, 458)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(SlaveConfigDialog)
+class Ui_SlaveSettingsDialog(object):
+    def setupUi(self, SlaveSettingsDialog):
+        SlaveSettingsDialog.setObjectName("SlaveSettingsDialog")
+        SlaveSettingsDialog.resize(537, 458)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(SlaveSettingsDialog)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
@@ -21,24 +21,24 @@ class Ui_SlaveConfigDialog(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.label = QtWidgets.QLabel(parent=SlaveConfigDialog)
+        self.label = QtWidgets.QLabel(parent=SlaveSettingsDialog)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
-        self.spinBox = QtWidgets.QSpinBox(parent=SlaveConfigDialog)
+        self.spinBox = QtWidgets.QSpinBox(parent=SlaveSettingsDialog)
         self.spinBox.setObjectName("spinBox")
         self.horizontalLayout.addWidget(self.spinBox)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_2 = QtWidgets.QLabel(parent=SlaveConfigDialog)
+        self.label_2 = QtWidgets.QLabel(parent=SlaveSettingsDialog)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_2.addWidget(self.label_2)
-        self.comboBox = QtWidgets.QComboBox(parent=SlaveConfigDialog)
+        self.comboBox = QtWidgets.QComboBox(parent=SlaveSettingsDialog)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.horizontalLayout_2.addWidget(self.comboBox)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.groupBox = QtWidgets.QGroupBox(parent=SlaveConfigDialog)
+        self.groupBox = QtWidgets.QGroupBox(parent=SlaveSettingsDialog)
         self.groupBox.setMaximumSize(QtCore.QSize(16777215, 100))
         self.groupBox.setObjectName("groupBox")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox)
@@ -46,6 +46,7 @@ class Ui_SlaveConfigDialog(object):
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.radioButton = QtWidgets.QRadioButton(parent=self.groupBox)
+        self.radioButton.setChecked(True)
         self.radioButton.setObjectName("radioButton")
         self.horizontalLayout_3.addWidget(self.radioButton)
         self.radioButton_2 = QtWidgets.QRadioButton(parent=self.groupBox)
@@ -55,43 +56,43 @@ class Ui_SlaveConfigDialog(object):
         self.verticalLayout.addWidget(self.groupBox)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_3 = QtWidgets.QLabel(parent=SlaveConfigDialog)
+        self.label_3 = QtWidgets.QLabel(parent=SlaveSettingsDialog)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_4.addWidget(self.label_3)
-        self.spinBox_2 = QtWidgets.QSpinBox(parent=SlaveConfigDialog)
+        self.spinBox_2 = QtWidgets.QSpinBox(parent=SlaveSettingsDialog)
         self.spinBox_2.setObjectName("spinBox_2")
         self.horizontalLayout_4.addWidget(self.spinBox_2)
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_4 = QtWidgets.QLabel(parent=SlaveConfigDialog)
+        self.label_4 = QtWidgets.QLabel(parent=SlaveSettingsDialog)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_5.addWidget(self.label_4)
-        self.spinBox_3 = QtWidgets.QSpinBox(parent=SlaveConfigDialog)
+        self.spinBox_3 = QtWidgets.QSpinBox(parent=SlaveSettingsDialog)
         self.spinBox_3.setObjectName("spinBox_3")
         self.horizontalLayout_5.addWidget(self.spinBox_3)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_6.addLayout(self.verticalLayout)
-        self.buttonBox = QtWidgets.QDialogButtonBox(parent=SlaveConfigDialog)
+        self.buttonBox = QtWidgets.QDialogButtonBox(parent=SlaveSettingsDialog)
         self.buttonBox.setOrientation(QtCore.Qt.Orientation.Vertical)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel|QtWidgets.QDialogButtonBox.StandardButton.Ok)
         self.buttonBox.setObjectName("buttonBox")
         self.horizontalLayout_6.addWidget(self.buttonBox)
         self.verticalLayout_2.addLayout(self.horizontalLayout_6)
 
-        self.retranslateUi(SlaveConfigDialog)
-        self.buttonBox.accepted.connect(SlaveConfigDialog.accept) # type: ignore
-        self.buttonBox.rejected.connect(SlaveConfigDialog.reject) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(SlaveConfigDialog)
+        self.retranslateUi(SlaveSettingsDialog)
+        self.buttonBox.accepted.connect(SlaveSettingsDialog.accept) # type: ignore
+        self.buttonBox.rejected.connect(SlaveSettingsDialog.reject) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(SlaveSettingsDialog)
 
-    def retranslateUi(self, SlaveConfigDialog):
+    def retranslateUi(self, SlaveSettingsDialog):
         _translate = QtCore.QCoreApplication.translate
-        SlaveConfigDialog.setWindowTitle(_translate("SlaveConfigDialog", "Dialog"))
-        self.label.setText(_translate("SlaveConfigDialog", "Slave ID:"))
-        self.label_2.setText(_translate("SlaveConfigDialog", "Function:"))
-        self.comboBox.setItemText(0, _translate("SlaveConfigDialog", "03 Read Holding Registers (4x)"))
-        self.groupBox.setTitle(_translate("SlaveConfigDialog", "Address mode"))
-        self.radioButton.setText(_translate("SlaveConfigDialog", "Dec"))
-        self.radioButton_2.setText(_translate("SlaveConfigDialog", "Hex"))
-        self.label_3.setText(_translate("SlaveConfigDialog", "Slave address:"))
-        self.label_4.setText(_translate("SlaveConfigDialog", "Quantity:"))
+        SlaveSettingsDialog.setWindowTitle(_translate("SlaveSettingsDialog", "Modbus JC - Slave settings"))
+        self.label.setText(_translate("SlaveSettingsDialog", "Slave ID:"))
+        self.label_2.setText(_translate("SlaveSettingsDialog", "Function:"))
+        self.comboBox.setItemText(0, _translate("SlaveSettingsDialog", "03 Read Holding Registers (4x)"))
+        self.groupBox.setTitle(_translate("SlaveSettingsDialog", "Address mode"))
+        self.radioButton.setText(_translate("SlaveSettingsDialog", "Dec"))
+        self.radioButton_2.setText(_translate("SlaveSettingsDialog", "Hex"))
+        self.label_3.setText(_translate("SlaveSettingsDialog", "Slave address:"))
+        self.label_4.setText(_translate("SlaveSettingsDialog", "Quantity:"))

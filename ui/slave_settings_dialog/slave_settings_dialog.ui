@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SlaveConfigDialog</class>
- <widget class="QDialog" name="SlaveConfigDialog">
+ <class>SlaveSettingsDialog</class>
+ <widget class="QDialog" name="SlaveSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Modbus JC - Slave settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -70,6 +70,9 @@
              <widget class="QRadioButton" name="radioButton">
               <property name="text">
                <string>Dec</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -134,7 +137,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SlaveConfigDialog</receiver>
+   <receiver>SlaveSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -150,7 +153,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SlaveConfigDialog</receiver>
+   <receiver>SlaveSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

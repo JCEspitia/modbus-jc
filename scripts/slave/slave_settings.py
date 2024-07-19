@@ -1,13 +1,13 @@
 from PyQt6.QtWidgets import QDialog
-from ui.slave_configuration_dialog.ui_slave_configuration_dialog import Ui_SlaveConfigDialog
+from ui.slave_settings_dialog.ui_slave_settings_dialog import Ui_SlaveSettingsDialog
 
 
-class SlaveConfigDialog(QDialog, Ui_SlaveConfigDialog):
-    def __init__(self):
+class SlaveConfigDialog(QDialog, Ui_SlaveSettingsDialog):
+    def __init__(self, parent=None):
         """
             Description
         """
-        super().__init__()
+        super().__init__(parent)
         self.setupUi(self)
         self.initialize_ui()
 

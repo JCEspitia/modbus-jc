@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\registers_widget\registers_widget.ui'
+# Form implementation generated from reading ui file 'ui/registers_widget/registers_widget.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.0
 #
@@ -67,13 +67,3 @@ class Ui_RegistersWidget(object):
         item.setText(_translate("RegistersWidget", "Name"))
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("RegistersWidget", "Value"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    RegistersWidget = QtWidgets.QWidget()
-    ui = Ui_RegistersWidget()
-    ui.setupUi(RegistersWidget)
-    RegistersWidget.show()
-    sys.exit(app.exec())

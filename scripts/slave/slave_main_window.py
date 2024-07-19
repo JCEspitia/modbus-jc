@@ -1,7 +1,8 @@
 from PyQt6.QtWidgets import QMainWindow, QMdiSubWindow, QMessageBox, QInputDialog
 
+from scripts.settings.settings_dialog import SettingsDialog
 from scripts.registers_widget.registers_widget_container import RegistersWidgetContainer
-from scripts.slave.slave_configuration import SlaveConfigDialog
+from scripts.slave.slave_settings import SlaveConfigDialog
 from ui.slave_main_window.ui_slave_main_window import Ui_SlaveMainWindow
 
 
@@ -11,13 +12,12 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
         Slave main window constructor.
         """
         super().__init__()
-        self.window_manager = window_manager
-        self.slave_config_dialog = SlaveConfigDialog()
         self.block_counter = 0
         self.limit_blocks = 5
         self.blocks = []
         self.setupUi(self)
         self.initialize_ui()
+        self.window_manager = window_manager
 
     def initialize_ui(self):
         """
@@ -26,18 +26,25 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
         self.actionHome.triggered.connect(self.open_home)
         self.actionAddBlock.triggered.connect(self.add_block)
         self.actionDeleteBlocks.triggered.connect(self.delete_all_blocks)
-        self.actionSlaveConfig.triggered.connect(self.show_slave_config_dialog)
+        self.actionSlaveSettings.triggered.connect(self.open_slave_config_dialog)
+        self.actionSettings.triggered.connect(self.open_settings_dialog)
         self.add_block()
 
     def open_home(self):
         self.window_manager.show_home()
         self.close()
 
-    def show_slave_config_dialog(self):
+    def open_slave_config_dialog(self):
         """
         Show the SlaveConfigDialog.
         """
-        self.slave_config_dialog.exec()
+        SlaveConfigDialog(self).exec()
+
+    def open_settings_dialog(self):
+        """
+        Show the ConfigurationDialog.
+        """
+        SettingsDialog(self).exec()
 
     def add_block(self):
         """
@@ -79,5 +86,3 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
         if sub_window in self.blocks:
             self.blocks.remove(sub_window)
             self.block_counter -= 1
-
-
