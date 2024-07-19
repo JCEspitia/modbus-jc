@@ -40,6 +40,11 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionNew"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menuConnection">
     <property name="cursor">
@@ -64,7 +69,7 @@
     <property name="title">
      <string>Setup</string>
     </property>
-    <addaction name="actionSlaveConfig"/>
+    <addaction name="actionSlaveSettings"/>
    </widget>
    <widget class="QMenu" name="menuFunctions">
     <property name="cursor">
@@ -176,12 +181,47 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionSlaveConfig">
+  <action name="actionSlaveSettings">
+   <property name="icon">
+    <iconset theme="system-run"/>
+   </property>
+   <property name="text">
+    <string>Slave Settings...</string>
+   </property>
+   <property name="toolTip">
+    <string>Slave settings</string>
+   </property>
+  </action>
+  <action name="actionSettings">
    <property name="icon">
     <iconset theme="document-properties"/>
    </property>
    <property name="text">
-    <string>Slave configuration...</string>
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="icon">
+    <iconset theme="document-save-as"/>
+   </property>
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset theme="document-new"/>
+   </property>
+   <property name="text">
+    <string>New...</string>
    </property>
   </action>
  </widget>
