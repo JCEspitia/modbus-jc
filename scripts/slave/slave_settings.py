@@ -17,3 +17,11 @@ class SlaveConfigDialog(QDialog, Ui_SlaveSettingsDialog):
         """
         pass
 
+    def get_values(self):
+        """
+        Get the values for slave.
+        """
+        slave_address = self.slaveAddressInput.value()
+        quantity = self.quantityInput.value()
+        return slave_address, quantity
+

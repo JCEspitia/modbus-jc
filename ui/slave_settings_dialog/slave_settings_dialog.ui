@@ -28,7 +28,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox"/>
+          <widget class="QSpinBox" name="slaveIdInput"/>
          </item>
         </layout>
        </item>
@@ -42,7 +42,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="functionCmb">
            <item>
             <property name="text">
              <string>03 Read Holding Registers (4x)</string>
@@ -98,7 +98,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_2"/>
+          <widget class="QSpinBox" name="slaveAddressInput"/>
          </item>
         </layout>
        </item>
@@ -112,7 +112,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_3"/>
+          <widget class="QSpinBox" name="quantityInput"/>
          </item>
         </layout>
        </item>

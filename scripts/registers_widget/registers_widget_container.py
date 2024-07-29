@@ -2,6 +2,8 @@ from PyQt6.QtCore import pyqtSignal, Qt
 from PyQt6.QtWidgets import QMdiSubWindow, QWidget, QInputDialog
 
 from scripts.registers_widget.registers_widget import RegistersWidget
+from scripts.settings.settings_dialog import SettingsDialog
+from scripts.slave.slave_settings import SlaveConfigDialog
 
 
 class RegistersWidgetContainer(QMdiSubWindow):
@@ -21,7 +23,6 @@ class RegistersWidgetContainer(QMdiSubWindow):
     def mouseDoubleClickEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
             self.title_double_clicked.emit()
-            # Evitar que se maximice
             event.ignore()
         else:
             super().mouseDoubleClickEvent(event)
@@ -41,3 +42,13 @@ class RegistersWidgetContainer(QMdiSubWindow):
 
         if ok and new_title:
             self.setWindowTitle(new_title)
+
+    def open_slave_config_dialog(self):
+        """
+        Show the SlaveConfigDialog.
+        """
+        dialog = SlaveConfigDialog(self)
+
+        if dialog.exec():
+            slave_address, quantity = dialog.get_values()
+            self.content_widget.update_table(slave_address, quantity)

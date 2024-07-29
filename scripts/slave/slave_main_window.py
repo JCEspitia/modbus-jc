@@ -55,7 +55,7 @@ class SlaveMainWindow(QMainWindow, Ui_SlaveMainWindow):
             sub_window = RegistersWidgetContainer()
             sub_window.setWindowTitle("New block")
 
-            sub_window.title_double_clicked.connect(lambda: sub_window.edit_title())
+            sub_window.title_double_clicked.connect(lambda: sub_window.open_slave_config_dialog())
 
             sub_window.closed.connect(lambda: self.block_closed_event(sub_window))
 
